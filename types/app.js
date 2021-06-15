@@ -1,17 +1,32 @@
-var product;
-product = {
-    id: "abc1",
-    price: 12.99,
-    tags: ["great-offer", "hot-and-new"],
-    details: {
-        title: "Red Carpet",
-        description: "A great carpet - almost brand-new!"
-    },
-    result: "test"
-};
-product.tags.push("pushedItem");
-for (var _i = 0, _a = product.tags; _i < _a.length; _i++) {
-    var hobby = _a[_i];
-    console.log(hobby.toUpperCase());
+function add(n1, n2) {
+    return n1 + n2;
 }
-console.log(product);
+// void if no return, undefined if return nothing
+function printResult(num) {
+    console.log("Result is " + num);
+}
+function addAndHandler(n1, n2, cb) {
+    var result = n1 + n2;
+    cb(result);
+}
+printResult(add(2, 12));
+var combineValues;
+combineValues = add;
+// Error due to type missmatch
+// combineValues = printResult
+console.log(combineValues(2, 4));
+addAndHandler(10, 20, function (result) {
+    console.log(result);
+});
+// Unknown and Never Type
+var userInput;
+var userName;
+userInput = 5;
+userInput = "max";
+if (typeof userInput === "string") {
+    userName = userInput;
+}
+function generateError(message, code) {
+    throw { message: message, code: code };
+}
+generateError("An error occurs", 500);
