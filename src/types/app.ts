@@ -29,6 +29,8 @@ addAndHandler(10, 20, (result) => {
 // Unknown and Never Type
 let userInput: unknown;
 let userName: string;
+let sample: [number];
+sample.push(1)
 
 userInput = 5;
 userInput = "max";
