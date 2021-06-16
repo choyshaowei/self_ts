@@ -65,6 +65,7 @@
   },
   "exclude": [
     "node_modules", // would be the default
+    "./src/debug",
     "./src/types",
     "./src/nextgen",
   ]
